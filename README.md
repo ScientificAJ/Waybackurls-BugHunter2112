@@ -9,6 +9,9 @@ Orignal Code Created by @mhmdiaa
 # Usage:
 
 chmod +x BugHunter2112
+./BugHunter2112 bughuntingsite.com
 
-./BugHunter2112 example.com
+or 
+
+python3 BugHunter2112 bughuntingsite.com
 
