@@ -18,3 +18,24 @@ or
 $  python3 BugHunter2112 bughuntingsite.com
 
 ```
+
+# Dependencies
+
+1. requests
+2. json
+
+requests Can be Installed by:
+
+```
+pip3 install requests
+
+```
+
+json Can be Installed by:
+
+```
+pip3 install json
+
+```
+
+
