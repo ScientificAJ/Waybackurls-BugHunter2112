@@ -8,9 +8,9 @@ Orignal Code Created by @mhmdiaa
 
 # Usage:
 ```
-$ chmod +x BugHunter2112
+$ chmod +x BugHunter2112.py
 
-$ ./BugHunter2112 bughuntingsite.com
+$ ./BugHunter2112.py bughuntingsite.com
 
 ```
 or 
