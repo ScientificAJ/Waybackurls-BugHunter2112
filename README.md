@@ -10,5 +10,5 @@ Orignal Code Created by @mhmdiaa
 
 chmod +x BugHunter2112
 
-./BugHunter2112 examplecom
+./BugHunter2112 example.com
 
