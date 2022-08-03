@@ -9,6 +9,7 @@ Orignal Code Created by @mhmdiaa
 # Usage:
 
 chmod +x BugHunter2112
+
 ./BugHunter2112 bughuntingsite.com
 
 or 
