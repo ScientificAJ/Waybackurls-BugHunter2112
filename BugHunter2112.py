@@ -1,20 +1,5 @@
 #!/usr/bin/env python3
 
-"""
-
-
-Hi, This is a variant of the original Waybackurls by mhmdiaa on Github for finding subdomains modified by AJ called BugHunter2212 to make .txt files instead of .json if wanted and decodes the url if wanted prompted by input
-
-
-Happy Bug Hunting!
-
-Credits
-
-
-Orignal Code by @mhmdiaa
-
-""
-
 
 import json
 import requests
@@ -25,7 +10,7 @@ import sys
 
 print(""" 
 
-Hi, This is a variant of th original Waybackurls on Github for finding subdomains modified by AJ called BugHunter2212 to make .txt files instead of .json if wanted and decodes the url if wanted prompted by input
+Hi, This is a variant of the original Waybackurls on Github for finding subdomains modified by AJ called BugHunter2212 to make .txt files instead of .json if wanted and decodes the url if wanted prompted by input
 
 
 Happy Bug Hunting!
@@ -34,10 +19,15 @@ Happy Bug Hunting!
 
 x = input("Do you want to decode the URL Yes or No: ")
 y = input("Do you want .txt Yes or No: ")
+z = input("Do you want to use Wayback machine to find suburls Yes or No: ")
+
 
 def waybackurls(host, with_subs):
     if with_subs:
         url = 'http://web.archive.org/cdx/search/cdx?url=*.%s/*&output=json&fl=original&collapse=urlkey' % host
+
+    elif z.lower() == "no":
+        url = "http://" + host
     else:
         url = 'http://web.archive.org/cdx/search/cdx?url=%s/*&output=json&fl=original&collapse=urlkey' % host
     r = requests.get(url)
@@ -48,14 +38,13 @@ def waybackurls(host, with_subs):
 if __name__ == '__main__':
     argc = len(sys.argv)
     if argc < 2:
-        print('Usage:\n\tpython3 BugHunter2212.py <url> <include_subdomains:optional>')
+        print('Usage:\n\tpython3 BugHunter2212.py <url> <include_subdomains:optional> <decode_url:optional(Yes or No)> <want_txt:optional(Yes or No)>?')
         sys.exit()
 
     host = sys.argv[1]
     with_subs = False
     if argc > 3:
         with_subs = True
-
     urls = waybackurls(host, with_subs)
     if urls:
         if y.lower() == "no":
@@ -79,6 +68,3 @@ if __name__ == '__main__':
 
     else:
         print('[-] Found nothing in the URL, Try Using Another URL')
-        
-        
-        
