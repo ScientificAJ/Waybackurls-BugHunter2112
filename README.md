@@ -5,3 +5,10 @@ Hi, This is a variant of the original Waybackurls on Github for finding subdomai
 Credits:
 
 Orignal Code Created by @mhmdiaa
+
+# Usage:
+
+chmod +x BugHunter2112
+
+./BugHunter2112 examplecom
+
