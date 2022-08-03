@@ -10,7 +10,7 @@ import sys
 
 print(""" 
 
-Hi, This is a variant of the original Waybackurls on Github for finding subdomains modified by AJ called BugHunter2212 to make .txt files instead of .json if wanted and decodes the url if wanted prompted by input
+Hi, This is a variant of the original Waybackurls on Github for finding subdomains modified by AJ called BugHunter2212 to make .txt files instead of .json if wanted, decodes the url if wanted and uses the original site (non-Wayback Machine site) if wanted prompted by input
 
 
 Happy Bug Hunting!
