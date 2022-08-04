@@ -47,3 +47,11 @@ pip3 install json
 
 ```
 
+termcolor Can be Installed by:
+
+```
+
+pip3 install termcolor
+
+```
+
