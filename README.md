@@ -57,7 +57,7 @@ $ pip3 install termcolor
 
 ```
 
-# Installation
+# Installation:
 
 ```
 $ git pull https://github.com/ScientificAJ/Waybackurls-BugHunter2112.git
