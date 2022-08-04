@@ -3,9 +3,15 @@ Hi, This is a variant of the original Waybackurls on Github for finding subdomai
 .json (Optional), decodes the url (Optional) and uses the original site (non-Wayback Machine site) (Optional) prompted by input,  Happy Bug Hunting!
 
 
+
+
+
 # Credits:
 
 Orignal Code Created by @mhmdiaa
+
+
+
 
 # Usage:
 ```
@@ -19,6 +25,8 @@ or
 $  python3 BugHunter2112 bughuntingsite.com
 
 ```
+
+
 
 # Dependencies:
 
