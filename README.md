@@ -1,4 +1,4 @@
-# BugHunter2112
+# Waybackurls (BugHunter2112)
 Hi, This is a variant of the original Waybackurls on Github for finding subdomains modified by AJ called BugHunter2112 to make .txt files instead of .json if wanted, decodes the url if wanted and uses the original site (non-Wayback Machine site) if wanted prompted by input,  Happy Bug Hunting!
 
 
