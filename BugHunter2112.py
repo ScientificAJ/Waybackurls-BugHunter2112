@@ -4,18 +4,18 @@
 import json
 import requests
 import sys
+from termcolor import *
 
 
 
-
-print(""" 
-
-Hi, This is a variant of the original Waybackurls on Github for finding subdomains modified by AJ called BugHunter2212 to make .txt files instead of .json if wanted, decodes the url if wanted and uses the original site (non-Wayback Machine site) if wanted prompted by input
+print(colored(""" 
+\033[3m
+Hi, This is a variant of the original Waybackurls on Github for finding subdomains modified by AJ called BugHunter2212 to make .txt files instead of .json if wanted and decodes the url if wanted prompted by input
 
 
 Happy Bug Hunting!
 
-""")
+""", 'cyan', attrs=['bold']))
 
 x = input("Do you want to decode the URL (y/n")
 y = input("Do you want .txt Yes or No (y/n) ")
