@@ -37,14 +37,15 @@ $  python3 BugHunter2112 bughuntingsite.com
 requests Can be Installed by:
 
 ```
-pip3 install requests
+
+$ pip3 install requests
 
 ```
 
 json Can be Installed by:
 
 ```
-pip3 install json
+$ pip3 install json
 
 ```
 
@@ -52,7 +53,17 @@ termcolor Can be Installed by:
 
 ```
 
-pip3 install termcolor
+$ pip3 install termcolor
 
 ```
 
+# Installation
+
+```
+$ git pull https://github.com/ScientificAJ/Waybackurls-BugHunter2112.git
+
+$ cd Waybackurls-BugHunter2112
+
+$ chmod +x BugHunter2112.py
+
+```
