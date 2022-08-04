@@ -17,16 +17,16 @@ Happy Bug Hunting!
 
 """)
 
-x = input("Do you want to decode the URL Yes or No: ")
-y = input("Do you want .txt Yes or No: ")
-z = input("Do you want to use Wayback machine to find suburls Yes or No: ")
+x = input("Do you want to decode the URL (y/n")
+y = input("Do you want .txt Yes or No (y/n) ")
+z = input("Do you want to use Wayback machine to find suburls (y/n): ")
 
 
 def waybackurls(host, with_subs):
     if with_subs:
         url = 'http://web.archive.org/cdx/search/cdx?url=*.%s/*&output=json&fl=original&collapse=urlkey' % host
 
-    elif z.lower() == "no":
+    elif z.lower() == "n":
         url = "http://" + host
     else:
         url = 'http://web.archive.org/cdx/search/cdx?url=%s/*&output=json&fl=original&collapse=urlkey' % host
@@ -47,20 +47,20 @@ if __name__ == '__main__':
         with_subs = True
     urls = waybackurls(host, with_subs)
     if urls:
-        if y.lower() == "no":
+        if y.lower() == "n":
             filename = '%s-waybackurls.json' % host
             with open(filename, 'w') as f:
-                if x.lower() == "yes":
+                if x.lower() == "y":
                     urls = requests.utils.unquote(urls).replace(" /", "")
                     urls = json.dumps(urls)
 
-        elif y.lower() == "yes":
+        elif y.lower() == "y":
             filename = '%s-waybackurls.txt' % host
 
         else:
             print("Please enter either yes or no in your next attempt")
         with open(filename, 'w') as f:
-            if x.lower() == "yes":
+            if x.lower() == "y":
                 urls = requests.utils.unquote(urls).replace(" /", "")
 
                 f.write(urls)
