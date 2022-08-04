@@ -33,6 +33,8 @@ $  python3 BugHunter2112 bughuntingsite.com
 1. requests
 2. json
 3. termcolor
+
+
 requests Can be Installed by:
 
 ```
