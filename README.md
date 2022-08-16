@@ -8,7 +8,7 @@ Hi, This is a variant of the original Waybackurls on Github for finding subdomai
 
 # Credits:
 
-This tool was inspired by @mhmdiaa's waybackurls.py script.
+This tool was inspired by @mhmdiaa's waybackurls.py script. Thanks To Them For The Great Idea!
 
 
 
