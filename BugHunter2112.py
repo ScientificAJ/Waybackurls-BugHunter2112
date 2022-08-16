@@ -1,8 +1,15 @@
 #!/usr/bin/env python3
+
+
 import json
 import requests
 import sys
 from termcolor import *
+import time
+
+
+# TODO: Make Time Second difference for less noise
+
 
 
 
@@ -15,9 +22,19 @@ Happy Bug Hunting!
 
 """, 'cyan', attrs=['bold']))
 
-x = input("Do you want to decode the URL (y/n")
-y = input("Do you want .txt Yes or No (y/n) ")
+
+# b = input("How many second time difference do you want to make to not make any noise: ")
+
+h = input("Do you want to find Open Redirect Vulnerabilities (y/n): ")
+
+i = float(input(("How Much Do You Want The Page Timeout To Be (In Seconds): ")))
+
+x = input("Do you want to decode the URL (y/n): ")
+y = input("Do you want .txt (y/n): ")
 z = input("Do you want to use Wayback machine to find suburls (y/n): ")
+
+
+print(colored("\n\n\nIMPORTANT! Please Check If The Site Has The Bug Bounty Program\n\n\n", attrs=['bold']))
 
 
 def waybackurls(host, with_subs):
@@ -28,15 +45,27 @@ def waybackurls(host, with_subs):
         url = "http://" + host
     else:
         url = 'http://web.archive.org/cdx/search/cdx?url=%s/*&output=json&fl=original&collapse=urlkey' % host
-    r = requests.get(url)
+    
+    try:
+
+        r = requests.get(url, timeout=i)
+    
+    except:
+
+        print("Connection Timed Out")
+
     results = str(r.json()).replace("[", "").replace("]", "").replace(", ", "\n").replace("'", "")
     return results[1:]
 
 
 if __name__ == '__main__':
     argc = len(sys.argv)
+
+
+
+
     if argc < 2:
-        print('Usage:\n\tpython3 BugHunter2212.py <url> <include_subdomains:optional> <decode_url:optional(Yes or No)> <want_txt:optional(Yes or No)>?')
+        print('Usage:\n\tpython3 BugHunter2212.py <url> <include_subdomains:optional>?')
         sys.exit()
 
     host = sys.argv[1]
@@ -47,22 +76,40 @@ if __name__ == '__main__':
     if urls:
         if y.lower() == "n":
             filename = '%s-waybackurls.json' % host
-            with open(filename, 'w') as f:
+            with open(filename, 'w') as file:
                 if x.lower() == "y":
                     urls = requests.utils.unquote(urls).replace(" /", "")
-                    urls = json.dumps(urls)
+                    json.dump(urls, file)
+
+
+                    print('[*] Saved results to %s' % filename)
+
+
 
         elif y.lower() == "y":
             filename = '%s-waybackurls.txt' % host
 
         else:
-            print("Please enter either yes or no in your next attempt")
-        with open(filename, 'w') as f:
+            print("Please enter either (y/n) in your next attempt")
+        with open(filename, 'w') as file2:
             if x.lower() == "y":
                 urls = requests.utils.unquote(urls).replace(" /", "")
 
-                f.write(urls)
+                file2.write(urls)
         print('[*] Saved results to %s' % filename)
+
+
+        if h.lower() == "y":
+
+            with open(filename) as file:
+    
+                file = file.readlines()
+
+                for line in file:
+
+                    if "?r" in line.lower():
+
+                        print(line)
 
     else:
         print('[-] Found nothing in the URL, Try Using Another URL')
