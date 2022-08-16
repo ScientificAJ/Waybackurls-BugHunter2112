@@ -51,7 +51,7 @@ def waybackurls(host, with_subs):
     
     except:
 
-        print("Connection Timed Out")
+        print("Sorry, An Error Occurred")
 
     results = str(r.json()).replace("[", "").replace("]", "").replace(", ", "\n").replace("'", "")
     return results[1:]
