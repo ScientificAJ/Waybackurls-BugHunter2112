@@ -9,7 +9,7 @@ from termcolor import *
 import time
 
 
-# TODO: Make Time Second difference for less noise
+
 
 
 
