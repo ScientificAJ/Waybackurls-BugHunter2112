@@ -45,6 +45,10 @@ z = input("Do you want to use Wayback machine to find suburls (y/n): ")
 
 print(colored("\n\n\nIMPORTANT! Please Check If The Site Has The Bug Bounty Program\n\n\n", attrs=['bold']))
 
+
+time.sleep(2)
+
+
 presentinrelativetofuture = time.time()
 
 def waybackurls(host, with_subs):
