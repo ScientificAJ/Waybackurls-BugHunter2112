@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 
+import argparse
 import json
 import requests
 import sys
@@ -8,6 +9,7 @@ from termcolor import *
 import time
 
 
+# TODO: Make Time Second difference for less noise
 
 
 
@@ -24,17 +26,25 @@ Happy Bug Hunting!
 
 # b = input("How many second time difference do you want to make to not make any noise: ")
 
+
+parser = argparse.ArgumentParser()
+
 h = input("Do you want to find Open Redirect Vulnerabilities (y/n): ")
 
 i = float(input(("How Much Do You Want The Page Timeout To Be (In Seconds): ")))
+
+
+
 
 x = input("Do you want to decode the URL (y/n): ")
 y = input("Do you want .txt (y/n): ")
 z = input("Do you want to use Wayback machine to find suburls (y/n): ")
 
 
+
 print(colored("\n\n\nIMPORTANT! Please Check If The Site Has The Bug Bounty Program\n\n\n", attrs=['bold']))
 
+presentinrelativetofuture = time.time()
 
 def waybackurls(host, with_subs):
     if with_subs:
@@ -47,8 +57,22 @@ def waybackurls(host, with_subs):
     
     try:
 
+        global presentinrelativetofuture2
+
+        global presentinrelativetofuture
+
+
+
         r = requests.get(url, timeout=i)
-    
+
+        presentinrelativetofuture2 = time.time()
+
+
+
+        r.raise_for_status()
+
+
+
     except:
 
         print("Sorry, An Error Occurred")
@@ -84,7 +108,6 @@ if __name__ == '__main__':
                     print('[*] Saved results to %s' % filename)
 
 
-
         elif y.lower() == "y":
             filename = '%s-waybackurls.txt' % host
 
@@ -96,6 +119,10 @@ if __name__ == '__main__':
 
                 file2.write(urls)
         print('[*] Saved results to %s' % filename)
+
+        calculatedtime = presentinrelativetofuture + time.time()
+
+
 
 
         if h.lower() == "y":
@@ -109,6 +136,18 @@ if __name__ == '__main__':
                     if "?r" in line.lower():
 
                         print(line)
+
+        
+        print(colored("\n\n[*] Total Finding Time: " + str(calculatedtime) + " Seconds"))
+
+
+
+
+
+
+
+
+        
 
     else:
         print('[-] Found nothing in the URL, Try Using Another URL')
