@@ -16,10 +16,11 @@ import time
 
 print(colored(""" 
 \033[3m
-Hi, This is a variant of the original Waybackurls on Github for finding subdomains modified by AJ called BugHunter2212 to make .txt files instead of .json if wanted and decodes the url if wanted prompted by input
 
 
-Happy Bug Hunting!
+Hi, This is a variant of the original Waybackurls on Github for finding subdomains modified by AJ called BugHunter2112 to make .txt files instead of 
+.json (Optional), decodes the url (Optional), and finds You Open Redirect Bugs For Faster Bug Hunting (If Wanted) and uses the original site (non-Wayback Machine site) (Optional) prompted by input and Tell's You The Total Finding Time,  Happy Bug Hunting!
+
 
 """, 'cyan', attrs=['bold']))
 
