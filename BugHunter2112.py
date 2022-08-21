@@ -9,18 +9,17 @@ from termcolor import *
 import time
 
 
-
+# TODO: Make Time Second difference for less noise
 
 
 
 
 print(colored(""" 
 \033[3m
+Hi, This is a variant of the original Waybackurls on Github for finding subdomains modified by AJ called BugHunter2212 to make .txt files instead of .json if wanted and decodes the url if wanted prompted by input
 
 
-Hi, This is a variant of the original Waybackurls on Github for finding subdomains modified by AJ called BugHunter2112 to make .txt files instead of 
-.json (Optional), decodes the url (Optional), and finds You Open Redirect Bugs For Faster Bug Hunting (If Wanted) and uses the original site (non-Wayback Machine site) (Optional) prompted by input and Tell's You The Total Finding Time,  Happy Bug Hunting!
-
+Happy Bug Hunting!
 
 """, 'cyan', attrs=['bold']))
 
@@ -45,8 +44,7 @@ z = input("Do you want to use Wayback machine to find suburls (y/n): ")
 
 print(colored("\n\n\nIMPORTANT! Please Check If The Site Has The Bug Bounty Program\n\n\n", attrs=['bold']))
 
-
-time.sleep(2)
+time.sleep(3)
 
 
 presentinrelativetofuture = time.time()
@@ -67,6 +65,7 @@ def waybackurls(host, with_subs):
         global presentinrelativetofuture
 
 
+        
 
         r = requests.get(url, timeout=i)
 
@@ -138,12 +137,12 @@ if __name__ == '__main__':
 
                 for line in file:
 
-                    if "?r" in line.lower():
+                    if ("?r=" in line.lower()) or ("?site=" in line.lower()) or ("redir" in line.lower()):
 
                         print(line)
 
         
-        print(colored("\n\n[*] Total Finding Time: " + str(calculatedtime) + " Seconds"))
+        print(colored("\n\n[*] Total Finding Time: " + str(calculatedtime) + " Seconds", 'cyan', attrs=['bold']))
 
 
 
@@ -156,3 +155,4 @@ if __name__ == '__main__':
 
     else:
         print('[-] Found nothing in the URL, Try Using Another URL')
+
