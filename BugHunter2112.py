@@ -124,7 +124,7 @@ if __name__ == '__main__':
                 file2.write(urls)
         print('[*] Saved results to %s' % filename)
 
-        calculatedtime = presentinrelativetofuture + time.time()
+        calculatedtime = presentinrelativetofuture - time.time()
 
 
 
